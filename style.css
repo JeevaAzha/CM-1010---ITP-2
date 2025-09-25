@@ -1,0 +1,119 @@
+/* 📌 Finalized style.css: Restoring All Colors & Full Canvas Layout */
+
+/* Global Styles */
+.sideBarItem {
+    max-height: 50px;
+    max-width: 50px;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 50%; /* Makes icons circular */
+    overflow: hidden;
+    border: 2px solid black; /* Default black border for unselected */
+}
+
+.sideBarItem:hover {
+    transform: scale(1.1);
+}
+
+.sideBarItem.selected {
+    border: 2px solid blue !important; /* Ensure the selected tool gets a blue border */
+}
+
+.sideBarItem {
+    border: 2px solid black !important; /* Force unselected tools to keep the black border */
+}
+
+.sideBarItem img {
+    border-radius: 50%; /* Ensures images inside are also circular */
+    overflow: hidden;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+
+/* Header Section */
+.header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Color Palette Section with All Colors Restored */
+.colourPalette {
+    grid-area: colourP;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    max-height: 120px;
+    overflow-y: auto;
+}
+.colourSwatches {
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    margin: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+/* Additional Colors for the Palette */
+.colourSwatches:nth-child(odd) {
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Canvas Section Full Width */
+#content {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+}
+
+/* Options Section */
+.options {
+    grid-area: options;
+    padding: 15px;
+    background-color: #fafafa;
+    border-top: 2px solid #ddd;
+}
+
+/* Layout Grid Wrapper for Full Canvas */
+.wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: 60px auto 140px;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "colourP options";
+    background-color: #f8f8f8;
+    color: #444;
+    width: 100vw;
+}
+
+/* Responsive Styles for Mobile */
+/*
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 60px auto;
+        grid-template-rows: 50px auto 100px;
+        grid-template-areas:
+            "header header"
+            "sidebar content"
+            "colourP options";
+    }
+    .colourPalette {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+*/
+}
